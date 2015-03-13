@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+scriptName=`basename $0`
+osascript -e "id of application \"$1\"" 2>/dev/null ||
+ { echo "$scriptName: ERROR: Application with specified name not found: $1" 1>&2; exit 1; }
